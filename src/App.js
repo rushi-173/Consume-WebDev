@@ -66,9 +66,10 @@ const db = {
   ]
 };
 
+var topicList = Object.keys(db);
+
 export default function App() {
   const [topic, setTopic] = useState("HTML");
-
   function skillClickHandler(event) {
     setTopic(event);
   }
@@ -84,7 +85,7 @@ export default function App() {
       </p>
       <div>
         <ul>
-          {Object.keys(db).map((topic) => {
+          {topicList.map((topic) => {
             return (
               <li className="list-item-inline">
                 <button
